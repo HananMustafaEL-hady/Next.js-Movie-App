@@ -3,11 +3,10 @@ import { useRouter } from 'next/dist/client/router'
 import type { NextPage } from 'next'
 import { useMovie } from '../../../hooks'
 import { CardDetails } from '../../../components/CardDetails'
-import { Movie } from '../../../models/movies'
 
 
   
-const moive: NextPage = () => {
+const Moive = () => {
     const router=useRouter()
     const id = router.query.moiveID
     // console.log(typeof id)
@@ -20,4 +19,4 @@ const moive: NextPage = () => {
     
 }
 
-export default moive
+export default Moive

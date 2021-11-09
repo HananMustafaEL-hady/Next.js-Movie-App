@@ -1,13 +1,6 @@
 import React, { FunctionComponent } from 'react'; 
 import {Movie} from "../models/movies"
 import Image from 'next/image'
-
-// type CardProps = {
-//   name: string,
-//     image: string,
-//     date:string,
-//     rate:number
-//   }
   import styles from "../styles/Card.module.css"
   
 
@@ -16,8 +9,8 @@ import Image from 'next/image'
     return <div >
     <div className={`card ${styles.widthCard} `}>
       <Image className="card-img-top" src={`https://image.tmdb.org/t/p/w300${poster_path}`}  alt="Picture of the author"
-        width={500}
-        height={500}/>
+        width={1000}
+        height={1000}/>
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <div className="d-flex justify-content-between"> 

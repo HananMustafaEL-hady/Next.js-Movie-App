@@ -17,7 +17,7 @@ interface Props{
   moviespage:Moviespage
 }
 
- const moives: NextPage<Props> = (props) => {
+ const Moives = () => {
 
         const [pageIndex, setPageIndex] = useState(1);
 
@@ -51,4 +51,4 @@ interface Props{
    
   )
 }
-export default moives
+export default Moives
