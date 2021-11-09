@@ -7,7 +7,7 @@ import Image from 'next/image'
   export const Card: FunctionComponent<Movie> = ({ title, poster_path,release_date,vote_average }) =>{
     
     return <div >
-    <div className={`card ${styles.widthCard} `}>
+    <div className={`card  ${styles.widthCard} `}>
       <Image className="card-img-top" src={`https://image.tmdb.org/t/p/w300${poster_path}`}  alt="Picture of the author"
         width={1000}
         height={1000}/>

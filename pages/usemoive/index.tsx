@@ -17,17 +17,17 @@ interface Props{
   moviespage:Moviespage
 }
 
- const Moives = () => {
-
-        const [pageIndex, setPageIndex] = useState(1);
-
-  // let result= useMovies(props.moviespage)
+  const Moives: NextPage<Props> = (props) => {
+  const [pageIndex, setPageIndex] = useState(1);
+  let result= useMovies(props.moviespage)
   let pagination=Page({index:pageIndex})
-  if(pagination.isError) return  <h1>An error has occurred.</h1>
-  else if(pagination.isLoading) return <div className="lds-ripple"><div></div><div></div></div>
+  if(result.isError) return  <h1>An error has occurred.</h1>
+  else if(result.isLoading) return <div className="lds-ripple"><div></div><div></div></div>
+  const moviesArra=pagination.movies?.results? pagination.movies.results :result.movies.results
   return (
 <div className="row g-0 ">    
-{pagination?.movies?.results?.map(item=>{
+{
+moviesArra.map(item=>{
 
    return <Link href={`usemoive/${item.id}`} key={item.id}  >
      <a className="col-lg-3  col-md-6 col-sm-12 d-flex justify-content-center mt-5 "> <Card 
