@@ -64,3 +64,8 @@ img {
   justify-content: center;
   margin-top: 60px;
 }
+
+.bg {
+  background-color: #37474f;
+  height: 100vh;
+}
