@@ -14,5 +14,14 @@
 }
 
 .widthbody {
-  width: 70rem;
+  width: 65rem;
+}
+@media only screen and (max-width: 779px) {
+  .widthbody {
+    width: 33rem;
+  }
+}
+
+.bg {
+  background-color: #f8f8ff;
 }
