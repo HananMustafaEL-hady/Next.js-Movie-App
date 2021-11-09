@@ -16,7 +16,6 @@ export const getStaticProps: GetStaticProps = async () => {
 interface Props{
   moviespage:Moviespage
 }
-
   const Moives: NextPage<Props> = (props) => {
   const [pageIndex, setPageIndex] = useState(1);
   let result= useMovies(props.moviespage)
@@ -30,7 +29,7 @@ interface Props{
 moviesArra.map(item=>{
 
    return <Link href={`usemoive/${item.id}`} key={item.id}  >
-     <a className="col-lg-3  col-md-6 col-sm-12 d-flex justify-content-center mt-5 "> <Card 
+     <a className="col-lg-3  card__text col-md-6 col-sm-12 d-flex justify-content-center mt-5 "> <Card 
        original_title={item.original_title} poster_path={item.poster_path} vote_average={item.vote_average} release_date={item.release_date} adult={item.adult} backdrop_path={item.backdrop_path} genre_ids={[]} id={item.id} original_language={item.original_language} overview={''} popularity={item.popularity} title={item.title} video={item.video} vote_count={item.vote_count} />
    </a>
    </Link>

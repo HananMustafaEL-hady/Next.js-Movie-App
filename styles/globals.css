@@ -69,3 +69,10 @@ img {
   background-color: #37474f;
   height: 100vh;
 }
+
+.card__text {
+  color: rgb(40, 158, 187);
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+}
