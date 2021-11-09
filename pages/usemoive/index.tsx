@@ -37,11 +37,11 @@ moviesArra.map(item=>{
 
   <ul className="pagination__movies mt-4">
 
-      <button   className="page-item btn btn-info"onClick={() => setPageIndex(pageIndex - 1)} disabled={pageIndex<=1?true:false}>
+      <button   className="page-item   btn btn-info  btn__pag"onClick={() => setPageIndex(pageIndex - 1)} disabled={pageIndex<=1?true:false}>
      Previous
       </button>
  
-    <button className="page-item btn btn-info" onClick={() => setPageIndex(pageIndex +1)} disabled={pageIndex>=500?true:false}>
+    <button className="page-item    btn btn-info btn__pag" onClick={() => setPageIndex(pageIndex +1)} disabled={pageIndex>=500?true:false}>
       Next
       </button>
       
