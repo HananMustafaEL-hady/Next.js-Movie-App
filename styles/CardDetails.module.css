@@ -1,0 +1,18 @@
+.widthCard {
+  width: 40rem;
+}
+
+.img__svg {
+  width: 20px;
+  height: 20px;
+  fill: #eeb12e;
+  margin-right: 5px;
+}
+
+.span {
+  margin-top: 6px;
+}
+
+.widthbody {
+  width: 70rem;
+}

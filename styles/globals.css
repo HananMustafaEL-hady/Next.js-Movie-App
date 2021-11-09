@@ -57,3 +57,10 @@ img {
     opacity: 0;
   }
 }
+.pagination__movies {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  margin-top: 60px;
+}
