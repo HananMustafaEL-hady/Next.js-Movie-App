@@ -83,3 +83,12 @@ img {
   height: 2.5rem;
   text-align: center;
 }
+
+.container__Image {
+  width: 43rem;
+  background-color: #37474f;
+}
+
+.embed-responsive {
+  object-fit: cover;
+}
