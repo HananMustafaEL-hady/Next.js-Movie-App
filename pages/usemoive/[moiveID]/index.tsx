@@ -15,8 +15,20 @@ const Moive = () => {
      if(result.isError) return  <h1>An error has occurred.</h1>
       if(result.isLoading) return <div className="lds-ripple"><div></div><div></div></div>
     return <CardDetails movie={result.movie} />
-    return <div></div>
     
 }
+// export async function getStaticProps(context:object){
+
+//   const {params} = context
+//   const response= await fetch('')
+//   const data =await response.json()
+//   return {
+//     props:{
+//       moive:data
+//     }
+//   }
+// }
+  
+
 
 export default Moive
