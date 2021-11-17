@@ -5,9 +5,9 @@ import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
-    <div className="bg">
+    <div className="">
       <div className=" col-lg-12 col-md-10 col-sm-10 ">
-        <div className="card border-0 rounded-lg  mx-auto container__Image  " >
+        <div className="card border-0 rounded-lg  mx-auto container__Image " >
 
 
           <Image

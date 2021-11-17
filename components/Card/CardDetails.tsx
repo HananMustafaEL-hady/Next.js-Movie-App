@@ -1,7 +1,7 @@
 import React from 'react';
-import { Movie } from "../models/movies"
+import { Movie } from "../../models/movies"
 import Image from 'next/image'
-import styles from "../styles/CardDetails.module.css"
+import styles from "../../styles/CardDetails.module.css"
 
 export const CardDetails = ({ movie }: { movie: Movie }) => {
 

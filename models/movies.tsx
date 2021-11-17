@@ -19,6 +19,7 @@ export interface Moviespage {
     page: number,
     results: [Movie],
     total_pages: number,
-    total_results: number
+    total_results: number,
+    errors?: []
 }
 

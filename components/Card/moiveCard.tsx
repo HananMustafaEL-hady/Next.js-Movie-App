@@ -1,9 +1,7 @@
 import React from 'react'
 import type { NextPage } from 'next'
-
-import { Movie } from "../models/movies"
-import Image from 'next/image'
-import styles from "../styles/Card.module.css"
+import { Movie } from "../../models/movies"
+import styles from "../../styles/Card.module.css"
 import Link from 'next/link'
 interface Props {
     moive: Movie

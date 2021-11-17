@@ -1,19 +1,15 @@
 import useSWR from "swr";
-import { Movie } from "../models/movies";
-import fetcher from "./fetcher";
+import { useRouter } from 'next/router'
 
-interface Movieresult {
-  movie: Movie
-  isLoading: boolean
-  isError: boolean
-}
+export const useMovie = () => {
+  const router = useRouter()
+  const { moiveID } = router.query
 
-export const useMovie = (id: string | string[] | undefined): Movieresult => {
+  const { data, error } = useSWR(`https://api.themoviedb.org/3/movie/${moiveID}?api_key=12534cc168a46c6bea58ae033e21d151&language=en-US`)
 
-  const { data, error } = useSWR(`https://api.themoviedb.org/3/movie/${id}?api_key=12534cc168a46c6bea58ae033e21d151&language=en-US`)
   return {
     movie: data,
     isLoading: !data && !error,
-    isError: error,
+    error: error,
   }
 }

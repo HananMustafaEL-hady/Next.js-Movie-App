@@ -1,17 +1,50 @@
-import { NextPage } from 'next';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useMovies } from "../hooks"
-import { Moviespage } from '../models/movies'
-import { MoiveCard } from '../components/moiveCard'
-import { GridCard } from '../components/gridCards'
+import { Moviespage, Movie } from '../models/movies'
+import { GridCard } from '../components/Card/gridCards'
+import { ErrorPage } from '../components/Error/errorPage'
+import { Spinner } from '../components/spinner'
+import { useRouter } from 'next/router'
+import { Toast } from '../components/toast'
+
 
 interface Props {
-    pageIndex: number
-    moviespage: Moviespage
+    initialData: Moviespage
+
 }
-export const MoivesHoc: React.FC<Props> = ({ moviespage }) => {
-    const { movies, isLoading, isError } = useMovies(moviespage);
-    if (isError) return <h1>An error has occurred.</h1>
-    else if (isLoading) return <div className="lds-ripple"><div></div><div></div></div>
-    return <GridCard moivesArray={moviespage.results} />
+export const MoivesHoc: React.FC<Props> = ({ initialData }) => {
+    const router = useRouter()
+    const { movies, isLoading, error } = useMovies(initialData);
+    const [pageIndex, setPageIndex] = useState<number>(1);
+    const [moivesScroll, setMoivesScroll] = useState<[Movie] | any>();
+    const [hasMore, setHasMore] = useState(true);
+    useEffect(() => {
+        router.replace(
+            {
+                query: {
+                    page: pageIndex
+                },
+            },
+        );
+
+    }, [pageIndex])
+
+    useEffect(() => {
+        if (movies && !isLoading) {
+            setMoivesScroll((preState: any) => [...preState, ...movies]);
+        }
+
+
+    }, [movies, isLoading])
+
+    const getMorePost = () => {
+        pageIndex == 500 ? setHasMore(false) : setPageIndex(pageIndex + 1);
+
+    };
+
+
+    if (movies) return <GridCard moivesArray={moivesScroll} getMorePost={getMorePost} hasMore={hasMore} />
+    if (error) return <Toast error={error} />
+    if (isLoading) <Spinner />
+    return <div></div>
 }

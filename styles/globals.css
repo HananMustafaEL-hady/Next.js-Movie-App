@@ -65,11 +65,6 @@ img {
   margin-top: 60px;
 }
 
-.bg {
-  background-color: #37474f;
-  height: 100vh;
-}
-
 .card__text {
   color: rgb(40, 158, 187);
   text-decoration: none;
@@ -86,9 +81,12 @@ img {
 
 .container__Image {
   width: 43rem;
-  background-color: #37474f;
 }
 
 .embed-responsive {
   object-fit: cover;
+}
+
+.container__Image__error {
+  width: 35rem;
 }
