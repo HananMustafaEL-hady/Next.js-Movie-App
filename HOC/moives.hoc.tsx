@@ -13,25 +13,13 @@ interface Props {
 
 }
 export const MoivesHoc: React.FC<Props> = ({ initialData }) => {
-    const router = useRouter()
-    const { movies, isLoading, error } = useMovies(initialData);
     const [pageIndex, setPageIndex] = useState<number>(1);
-    const [moivesScroll, setMoivesScroll] = useState<[Movie] | any>();
+    const { movies, isLoading, error } = useMovies(pageIndex, initialData);
+    const [moivesScroll, setMoivesScroll] = useState<Movie | any>(movies);
     const [hasMore, setHasMore] = useState(true);
     useEffect(() => {
-        router.replace(
-            {
-                query: {
-                    page: pageIndex
-                },
-            },
-        );
-
-    }, [pageIndex])
-
-    useEffect(() => {
-        if (movies && !isLoading) {
-            setMoivesScroll((preState: any) => [...preState, ...movies]);
+        if (movies && !isLoading && pageIndex != 1) {
+            setMoivesScroll([...moivesScroll, ...movies]);
         }
 
 

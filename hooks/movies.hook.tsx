@@ -7,9 +7,8 @@ interface returnType {
   isLoading: boolean,
   error?: AxiosError
 }
-export function useMovies(fallbackData: Moviespage): returnType {
-  const router = useRouter()
-  const { page } = router.query
+export function useMovies(page: number, fallbackData: Moviespage | undefined): returnType {
+  fallbackData = page == 1 ? fallbackData : undefined
   const { data, error } = useSWR(`https://api.themoviedb.org/3/movie/popular?api_key=12534cc168a46c6bea58ae033e21d151&language=en-US&page=${page}`, { fallbackData });
   return {
     movies: data?.results,

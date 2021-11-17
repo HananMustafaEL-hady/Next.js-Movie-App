@@ -9,7 +9,7 @@ interface Props {
 }
 const Moives: NextPage<Props> = (props) => {
   const [pageIndex, setPageIndex] = useState(1);
-  const { movies, isLoading, error } = useMovies(props.moviespage);
+  const { movies, isLoading, error } = useMovies(pageIndex, props.moviespage);
   if (error) return <h1>An error has occurred.</h1>
   else if (isLoading) return <div className="lds-ripple"><div></div><div></div></div>
   return (
