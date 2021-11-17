@@ -15,9 +15,9 @@ const Moives: NextPage<Props> = (props) => {
   return (
     <div className="row g-0 ">
       {
-        movies?.map(item => {
+        movies?.map((item, index) => {
 
-          return <MoiveCard moive={item} />
+          return <MoiveCard moive={item} key={index * item.id} />
 
         })}
 
