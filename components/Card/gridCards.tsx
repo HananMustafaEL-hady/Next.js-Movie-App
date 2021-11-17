@@ -38,7 +38,7 @@ export const GridCard: React.FC<Props> = ({ moivesArray, hasMore, getMorePost })
             <div className="row g-0 "> {
                 moivesArray?.map((item, index) => {
 
-                    return <MoiveCard moive={item} key={index * item.id} />
+                    return <MoiveCard moive={item} key={index} />
 
                 })}
 
