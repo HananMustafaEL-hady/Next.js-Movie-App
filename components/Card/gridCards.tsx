@@ -22,7 +22,6 @@ export const GridCard: React.FC<Props> = ({ moivesArray, hasMore, getMorePost })
             hasMore={hasMore}
             loader={<h3> <Spinner /></h3>}
             endMessage={<h4>Nothing more to show</h4>}
-            scrollThreshold={0.9}
 
         // pullDownToRefresh
         // pullDownToRefreshContent={
