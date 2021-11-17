@@ -3,7 +3,6 @@ import { MoiveCard } from './moiveCard'
 import { Movie } from '../../models/movies'
 import { Pagination } from "../pagination"
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { Spinner } from "../spinner"
 
 interface Props {
     moivesArray: [Movie],
@@ -20,8 +19,9 @@ export const GridCard: React.FC<Props> = ({ moivesArray, hasMore, getMorePost })
             dataLength={moivesArray.length}
             next={getMorePost}
             hasMore={hasMore}
-            loader={<h3> <Spinner /></h3>}
+            loader={<h3> Loading...</h3>}
             endMessage={<h4>Nothing more to show</h4>}
+            scrollThreshold={0.9}
 
         // pullDownToRefresh
         // pullDownToRefreshContent={
