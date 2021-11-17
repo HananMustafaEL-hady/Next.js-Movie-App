@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useMovies } from "../hooks"
 import { Moviespage, Movie } from '../models/movies'
 import { GridCard } from '../components/Card/gridCards'
-import { ErrorPage } from '../components/Error/errorPage'
 import { Spinner } from '../components/spinner'
 import { useRouter } from 'next/router'
 import { Toast } from '../components/toast'

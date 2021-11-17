@@ -1,4 +1,3 @@
-import { ErrorPage } from '../components/Error/errorPage'
 import { ErrorWithStatus } from '../models/error'
 import Router from 'next/router'
 
