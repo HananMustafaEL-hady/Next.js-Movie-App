@@ -22,9 +22,9 @@ export const GridCard: React.FC<Props> = ({ moivesArray, hasMore, getMorePost })
             endMessage={<h4>Nothing more to show</h4>}
         >
             <div className="row g-0 "> {
-                moivesArray?.map(item => {
+                moivesArray?.map((item, index) => {
 
-                    return <MoiveCard moive={item} key={item.id} />
+                    return <MoiveCard moive={item} key={index * item.id} />
 
                 })}
 
