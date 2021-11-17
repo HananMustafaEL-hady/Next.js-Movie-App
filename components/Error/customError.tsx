@@ -9,7 +9,6 @@ export class BadRequestError extends Error {
   }
 }
 
-
 export class NotFoundError extends Error {
   data: AxiosError;
   constructor(error: AxiosError) {
@@ -18,6 +17,4 @@ export class NotFoundError extends Error {
     this.data = error;
   }
 }
-
-
 

@@ -16,22 +16,14 @@ export const Toast: React.FC<Props> = ({ error }) => {
         switch (status) {
             case 404: return Error = new NotFoundError(error)
             case 400: return Error = new BadRequestError(error)
-            // case 422:
-            //     return {
-            //         causeError: error?.response?.data.errors,
-            //     }
-            // default: return {
-            //     causeError: error?.response?.data.error,
-            // }
+
         }
 
 
 
     }, [error instanceof Error])
 
-    console.log(errorObj)
-
-    useEffect(() => { toast.error(`${errorObj} `) }, [errorObj])
+    useEffect(() => { toast.error(`${errorObj?.message} `) }, [errorObj])
 
     return (
         <ToastContainer />
