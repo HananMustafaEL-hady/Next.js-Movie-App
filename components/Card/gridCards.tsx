@@ -6,45 +6,25 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 interface Props {
     moivesArray: [Movie],
-    hasMore: boolean,
-    getMorePost: any,
+
 
 }
 
-export const GridCard: React.FC<Props> = ({ moivesArray, hasMore, getMorePost }) => {
+export const GridCard: React.FC<Props> = ({ moivesArray }) => {
     console.log("moivesArray", moivesArray)
     return (
 
-        <InfiniteScroll
-            dataLength={moivesArray.length}
-            next={getMorePost}
-            hasMore={hasMore}
-            loader={<h3> Loading...</h3>}
-            endMessage={<h4>Nothing more to show</h4>}
-            scrollThreshold={0.9}
 
-        // pullDownToRefresh
-        // pullDownToRefreshContent={
-        //     <h3 style={{ textAlign: 'center' }}>
-        //         &#8595; Pull down to refresh
-        //     </h3>
-        // }
-        // releaseToRefreshContent={
-        //     <h3 style={{ textAlign: 'center' }}>&#8593; Release to refresh</h3>
-        // }
-        // refreshFunction={getMorePost}    
+        <div className="row g-0 "> {
+            moivesArray?.map((item, index) => {
 
-        >
-            <div className="row g-0 "> {
-                moivesArray?.map((item, index) => {
+                return <MoiveCard moive={item} key={index * item.id} />
 
-                    return <MoiveCard moive={item} key={index * item.id} />
+            })}
 
-                })}
+            {/* <Pagination /> */}
+        </div>
 
-                {/* <Pagination /> */}
-            </div>
-        </InfiniteScroll>
 
     )
 }
